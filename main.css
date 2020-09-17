@@ -1,0 +1,432 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap');
+
+html{
+	scroll-behavior: smooth;
+}
+
+*{
+  margin: 0;
+  padding: 0;
+  color: white;
+  font-family: 'Poppins', sans-serif;
+} 
+
+body{
+	background: #f2f2f2;
+}
+
+nav{
+	background: #1b1b1b;
+}
+
+nav:after{
+	content: '';
+	clear: both;
+	display: table;
+}
+
+nav .logo img{
+	height: 55px;
+	width: 60px;
+	float: left;
+	line-height: 60px;
+	padding: 20px;
+	transition: left 1s;
+}
+
+nav .logo img:hover{
+	margin-left: 10px;
+	margin-top: 5px;
+}
+
+nav ul{
+	float: right;
+	list-style: none;
+	margin-right: 40px;
+	padding-top: 25px;
+	padding-bottom: 10px;
+}
+
+nav ul li{
+	float: left;
+	display: inline-block;
+	background: #1b1b1b;
+	margin: 0 5px;
+}
+
+nav ul li a{
+	color: white;
+	text-decoration: none;
+	line-height: 70px;
+	font-size: 18px;
+	padding: 8px 15px;
+}
+
+nav ul li a:hover{
+	color: #FAF60F;
+	border-radius: 15px;
+	box-shadow: 0 0 10px #FFDE24,
+			    0 0 10px #FAF60F;
+}
+
+nav ul ul{
+	position: absolute;
+	top: 90px;
+	opacity: 0;
+	visibility: hidden;
+	transition: top 1s;
+	padding-top: 10px;
+}
+nav ul li:hover > ul{
+	top: 70px;
+	opacity: 1;
+	visibility: visible;
+}
+
+nav ul ul li{
+	position: relative;
+	margin: 1px;
+	width: 190px;
+	float: center;
+	display: list-item;	
+}
+
+nav ul ul li a{
+	line-height: 40px;
+}
+
+nav ul ul li a:hover{
+	color: #FAF60F;
+	box-shadow: none;
+}
+
+.show,.icon, input{
+	display: none;
+}
+@media all and (max-width: 968px){
+	nav ul{
+		margin-right: 0px;
+		float: left;
+	}
+	nav .logo{
+		padding-left: 30px;
+		width: 50%;
+	}
+	nav ul li, nav ul ul li{
+		display: block;
+		width: 100%;
+	}
+	nav ul ul{
+		top: 70px;
+		position: static;
+		border-top: none;
+		float: none;
+		display: none;
+		opacity: 1;
+		visibility: visible;
+	}
+	nav ul ul a{
+		padding-left: 30px;
+	}
+	nav ul ul li{
+		border-bottom: 0px;
+	}
+	.icon{
+		display: block;
+		color: white;
+		position: absolute;
+		cursor: pointer;
+		font-size: 24px;
+		line-height: 55px;
+		right: 30px;
+	}
+	.show{
+		display: block;
+		color: white;
+		font-size: 18px;
+		padding: 0 20px;
+		line-height: 70px;
+		cursor: pointer;
+	}
+	.show:hover{
+		color: #FAF60F;
+	}
+	nav ul li a:hover{
+		box-shadow: none;
+	}
+	.show + a, ul{
+		display: none;
+	}
+	[id^=btn]:checked + ul{
+		display: block;
+	}
+}
+
+.slider{
+  width: 100%;
+  height: 100vh;
+  margin: 0px auto;
+  display: flex;
+  align-items: center;
+  background: #FAF60F;
+}
+
+.carousel{
+  max-width: 1200px;
+  margin: auto;
+  padding-top: 50px;
+}
+
+.carousel .sl{
+  color: #fff;
+  text-align: center;
+  margin: 20px 20px;
+  font-size: 16px;
+}
+
+.carousel .sl:hover{
+	-ms-transform: scale(1.1); 
+	-webkit-transform: scale(1.1);
+	transform: scale(1.1); 
+	box-shadow: 0 0 25px #101820FF,
+			    0 0 25px #101820FF;
+}
+
+.carousel .sl p{
+	text-align: center;
+	padding: 5px;
+	font-size: 16px;
+}
+
+.carousel .sl h2{
+	text-align: center;
+	padding: 15px;
+}
+
+.carousel .slajd-1{
+  background: #101820FF;
+}
+
+.carousel .slajd-2{
+  background: #101820EE;
+}
+
+.carousel .slajd-3{
+  background: #101820DD;
+}
+
+.carousel .slajd-4{
+  background: #101820CC;
+}
+
+.carousel .slajd-5{
+  background: #101820BB;
+}
+
+.carousel .slajd-6{
+  background: #101820AA;
+}
+
+.owl-dots{
+  text-align: center;
+  margin-top: 40px;
+}
+
+.owl-dot{
+  height: 35px;
+  width: 35px;
+  margin: 0 5px;
+  outline: none;
+  border-radius: 150px;
+  border: 2px solid #101820FF!important;
+  transition: all 1s ease;
+}
+
+.owl-dot.active{
+	background: #101820FF!important;
+}
+
+.owl-dot:hover{
+  background: #101820FF!important;
+  box-shadow: 0 0 10px #101820FF,
+			  0 0 10px #101820FF;
+}
+
+.novosti{
+	width: 100%;
+    height: 100vh;
+    display: flex;
+	background: black;
+    align-items: center;
+	display: grid;
+	grid-template: "novost1 novost2 novost2"
+				   "novost3 novost3 novost4";
+	align-content: space-around;
+    justify-content: space-around;
+}
+
+#novost-a {
+	grid-area: novost1;
+}
+
+#novost-b {
+	grid-area: novost2;
+}
+
+#novost-c {
+	grid-area: novost3;
+}
+
+#novost-d {
+	grid-area: novost4;
+}
+
+.novost {
+	display: grid;
+	grid-template: "region";
+	align-content: stretch;
+	justify-content: stretch;
+}
+
+.novost img {
+	grid-area: region;
+	justify-self: stretch;
+	align-self: stretch;
+}
+
+.novost .txbl{
+	grid-area: region;
+	justify-self: stretch;
+	align-self: stretch;
+	display: grid;
+	align-content: left;
+	justify-content: left;
+	background-color: #ffffffB6;
+	opacity: 0.0;
+	transition: 350ms;
+}
+
+.novost .txn{
+	grid-area: region;
+	justify-self: stretch;
+	align-self: stretch;
+	display: grid;
+	align-content: right;
+	justify-content: right;
+	background-color: #ffffffB6;
+	opacity: 0.0;
+	transition: 350ms;
+}
+
+.novost .txnd{
+	grid-area: region;
+	justify-self: stretch;
+	align-self: stretch;
+	display: grid;
+	align-content: center;
+	justify-content: center;
+	background-color: #ffffffB6;
+	opacity: 0.0;
+	transition: 350ms;
+}
+
+.novost .txh{
+	grid-area: region;
+	justify-self: stretch;
+	align-self: stretch;
+	display: grid;
+	align-content: center;
+	justify-content: center;
+	background-color: #ffffffB6;
+	opacity: 0.0;
+	transition: 350ms;
+}
+
+.novost .txh .linkovano{
+	padding-top: 250px;
+	text-decoration: none;
+	font-size: 24px;
+	font-weight: bold;
+	color: black;
+}
+
+.novost .txbl .linkovanoLB{
+	padding-left: 20px;
+	padding-top: 250px;
+	text-decoration: none;
+	font-size: 24px;
+	font-weight: bold;
+	color: black;
+}
+
+.novost .txnd .linkovanoND{
+	padding-left: 60px;
+	padding-top: 110px;
+	text-decoration: none;
+	font-size: 24px;
+	font-weight: bold;
+	color: black;
+}
+
+
+.novost .txn .linkovanoN{
+	padding-left: 200px;
+	width:             150px;     
+    height:            150px; 
+    -moz-transform:    rotate(45deg);     
+    -o-transform:      rotate(45deg);     
+    -webkit-transform: rotate(45deg);     
+    transform:         rotate(45deg);
+	text-decoration: none;
+	font-size: 24px;
+	font-weight: bold;
+	color: black;
+}
+
+.novost:hover .txh{
+	opacity: 1.0;
+}
+
+.novost:hover .txbl{
+	opacity: 1.0;
+}
+
+.novost:hover .txn{
+	opacity: 1.0;
+}
+
+#myBtn{
+	display: none;
+	position: fixed;
+	bottom: 20px;
+	right: 30px;
+	font-size: 18px;
+	border: none;
+	outline: none;
+	background-color: #0b6623;
+	color: black;
+	cursor: pointer;
+	padding: 15px;
+	border-radius: 4px;
+}
+
+#myBtn:hover{
+	background-color: #00A86B;
+	box-shadow: 0 0 10px #A9BA9D,
+			    0 0 10px #A9BA9D;
+}
+
+.footer{
+	position: relative;
+	display: inline-block;
+	clear: both;
+	height: 50px;
+	width: 100%;
+	padding: 20px;
+	text-align: center;
+	font-size: 20px;
+	color: black;
+	font-weight: 400;
+}
+
+
